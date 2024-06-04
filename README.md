@@ -82,7 +82,7 @@ Note that precompiled binaries of ticktock are available. As per version 0.20.0,
   sudo mv ut60e.service /etc/systemd/system
   sudo systemctl start ut60e
   ```
-3. Launch and configur Grafana dashboard
+3. Launch and configure Grafana dashboard
 
 Perhaps the easiest way of launching grafana is through Docker (assuming that it is already installed).
 
