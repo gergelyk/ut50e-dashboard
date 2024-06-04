@@ -1,0 +1,397 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_OPENTSDB-RASPBERRY",
+      "label": "opentsdb-raspberry",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "opentsdb",
+      "pluginName": "OpenTSDB"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.4.3"
+    },
+    {
+      "type": "datasource",
+      "id": "opentsdb",
+      "name": "OpenTSDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "opentsdb",
+        "uid": "${DS_OPENTSDB-RASPBERRY}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": 5000,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "metric": "mV",
+          "refId": "A"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "V",
+          "refId": "B"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "mV~",
+          "refId": "C"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "V~",
+          "refId": "D"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "uA",
+          "refId": "I"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "uA~",
+          "refId": "J"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "mA",
+          "refId": "E"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "mA~",
+          "refId": "G"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "A",
+          "refId": "F"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "A~",
+          "refId": "H"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "Ohm",
+          "refId": "K"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "kOhm",
+          "refId": "L"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "MOhm",
+          "refId": "M"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "nF",
+          "refId": "N"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "uF",
+          "refId": "O"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "Hz",
+          "refId": "P"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "kHz",
+          "refId": "Q"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "MHz",
+          "refId": "R"
+        },
+        {
+          "aggregator": "sum",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "percent",
+          "refId": "T"
+        },
+        {
+          "aggregator": "avg",
+          "datasource": {
+            "type": "opentsdb",
+            "uid": "${DS_OPENTSDB-RASPBERRY}"
+          },
+          "downsampleAggregator": "avg",
+          "downsampleFillPolicy": "none",
+          "hide": false,
+          "metric": "Celsius",
+          "refId": "S"
+        }
+      ],
+      "title": "UT60E",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "UT60E",
+  "uid": "ednnuozfz4x6oa",
+  "version": 3,
+  "weekStart": ""
+}

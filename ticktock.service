@@ -1,0 +1,12 @@
+[Unit]
+Description=TickTockDB
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/tt -c /etc/ticktock.conf
+Restart=always
+RestartSec=1
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

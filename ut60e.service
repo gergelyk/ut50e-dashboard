@@ -1,0 +1,12 @@
+[Unit]
+Description=Uni-T UT60E
+After=ticktock.target
+
+[Service]
+ExecStart=/usr/bin/ut60e --dmm /dev/ttyUSB0 --database 127.0.0.1:6182
+Restart=always
+RestartSec=1
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
