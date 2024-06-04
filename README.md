@@ -40,22 +40,29 @@ For the purpose of this project following hardware has been used:
 
 1. Compile and install ticktock DB in Raspberry Pi
 
+- Install compilation tools and libraries required by ticktock (refer to their webpage for details)
+
+- Build
+
 ```sh
 git clone https://github.com/ytyou/ticktock.git
 cd ticktock
 make -f Makefile.ubuntu
 sudo cp bin/tt /usr/bin/
+```
 
-# install files from this repo and start database
-sudo cp ticktock.service /etc/systemd/system
-sudo cp ticktock.conf /etc/systemd/system
+- Install files from this repo and start database
+
+```sh
+sudo cp ticktock.service /etc/systemd/system/
+sudo cp ticktock.conf /etc/
 sudo systemctl start ticktock
 ```
 
 Note that precompiled binaries of ticktock are available. As per version 0.20.0, I did't find them working on aarch64 though.
 
 2. Cross-compile and install `ut60e.cr` driver
-- Install crystal on the host side as described on their [webpage](https://crystal-lang.org/install/)
+- Install crystal (v1.11.2 or compatible) on the host side as described on their [webpage](https://crystal-lang.org/install/)
 
 - Cross-compile `ut60e.cr` on the host side:
   
