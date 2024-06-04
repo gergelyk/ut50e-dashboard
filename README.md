@@ -84,7 +84,7 @@ Note that precompiled binaries of ticktock are available. As per version 0.20.0,
   ```
 3. Launch and configure Grafana dashboard
 
-Perhaps the easiest way of launching grafana is through Docker (assuming that it is already installed).
+Perhaps the easiest way of launching grafana is through [Docker](https://www.docker.com/) (assuming that it is already installed).
 
 ```sh
 docker run -d -p 3000:3000 --name=grafana grafana/grafana
